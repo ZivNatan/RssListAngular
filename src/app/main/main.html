@@ -1,0 +1,31 @@
+<div class="container" ng-controller="mainCtrl">
+
+  <div>
+    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+  </div>
+
+    <div class="main row" style="margin-top: 30px" >
+      <div  id="sidebar" class="col">
+        <div id="search-box" >
+          <div id="search-form">
+            <input style="color:black" id="search-input" type="text" ng-model="newRss" placeholder="&#xF002; Search...">
+            <button id="search-button" ng-click="addRss()">SEND</button>
+          </div>
+        </div>
+
+        <div ng-repeat="item in reversRssArray track by $index" class="list-item"  ng-click="selected($index)" ng-class="{selected: item.selected == true}" >{{item.url}} <span class="x" ng-click="remove($index)">X</span></div>
+      </div>
+
+      <div id="right-menu" class="col" >
+        <div id="right-menu-headline"><h4 style="color:#FFF">Lorem Ipsum is simply dummy text</h4></div>
+        <div id="list-box">
+          <box class="box" ng-repeat="item in responseArray track by $index">
+
+          </box>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
